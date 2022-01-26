@@ -7,8 +7,8 @@ function Loader() {
       animation="grow"
       role="status"
       style={{
-        height: "200px",
-        width: "200px",
+        height: "100px",
+        width: "100px",
         margin: "auto",
         display: "block",
         color: "#f85b00",
