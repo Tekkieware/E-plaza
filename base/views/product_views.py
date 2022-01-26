@@ -48,12 +48,8 @@ def getTopProducts(request):
 @ api_view(['GET'])
 def getProduct(request, pk):
     product = Product.objects.get(_id=pk)
-    ct = product.category
-    related_products = Product.objects.filter(category=ct).exclude(_id=pk)
     serializer = ProductSerializer(product, many=False)
-    related_products_serializer = ProductSerializer(
-        related_products, many=True)
-    return Response({'product': serializer.data, 'related_products': related_products_serializer.data})
+    return Response(serializer.data)
 
 
 @ api_view(['POST'])

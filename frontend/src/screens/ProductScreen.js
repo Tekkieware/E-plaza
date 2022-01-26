@@ -229,27 +229,7 @@ function ProductScreen({ match, history }) {
               </ListGroup>
             </Col>
           </Row>
-          {related_products && (
-            <div>
-              <h5 class="my-header">Other {product.category} Products</h5>
-              {loading ? (
-                <Loader />
-              ) : error ? (
-                <Message children={error} variant="danger" />
-              ) : (
-                <div>
-                  <Row>
-                    {related_products.map((product) => (
-                      <Col key={product._id} sm={6} md={4} lg={3} xl={3}>
-                        <Product product={product} />
-                      </Col>
-                    ))}
-                  </Row>
-                </div>
-              )}
-            </div>
-          )}
-          {related_products && (
+          {products && (
             <div>
               <h5 class="my-header">Highest Rated Products</h5>
               {loadingTop ? (
